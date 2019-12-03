@@ -1,0 +1,53 @@
+=head1 NAME
+
+OpenTracing::Implementation::NoOp - Stops Crashing, doing nothing else
+
+
+
+=head1 SYNOPSIS
+
+    use OpenTracing::Implementation::NoOp;
+    
+    my $tracer = OpenTracing::Implementation::NoOp->bootstrap( );
+
+
+
+=head1 DESCRIPTION
+
+The NoOp Implementation will 'disable' the entire OpenTracing infrastructure by
+making almost every method do nothing, or return a 'NoOp' object.
+
+This way, none of the code will break if there is no OpenTracing active.
+
+
+
+=head1 CLASS METHODS
+
+
+
+=head2 bootstrap
+
+    my $tracer = OpenTracing::Implementation::NoOp->bootstrap( @extra_args );
+
+Returns a L<OpenTracing::Interface::Tracer> compliant tracer, using the
+L<OpenTracing::Implementation::NoOp::Tracer> implementation.
+
+Any arguments passed in, and dutyfully passed, but are supposedly useless.
+
+
+
+=head1 AUTHOR
+
+=over
+
+=item Theo van Hoesel
+
+=back
+
+
+
+=head1 COPYRIGHT
+
+2019 Perceptyx Inc, Th. J. van Hoesel
+
+=cut
