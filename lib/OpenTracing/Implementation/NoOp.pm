@@ -1,5 +1,8 @@
 package OpenTracing::Implementation::NoOp;
 
+use strict;
+use warnings;
+
 
 
 use aliased 'OpenTracing::Implementation::NoOp::Tracer';
