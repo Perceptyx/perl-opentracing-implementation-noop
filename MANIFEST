@@ -9,3 +9,4 @@ lib/OpenTracing/Implementation/NoOp/Tracer.pm
 Makefile.PL
 MANIFEST
 README.md
+t/00_use_ok.t
