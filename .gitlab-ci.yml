@@ -1,0 +1,35 @@
+image: ubuntu:bionic
+
+variables:
+  DEPENDENCIES: 331
+
+stages:
+  - test
+  - build
+
+before_script:
+  - echo "Before script installation"
+  - apt update
+  - apt install libdevel-cover-perl libtap-formatter-junit-perl libjson-xs-perl libtest-most-perl libtest-mockmodule-perl cpanminus make -y
+
+test:unit:
+  stage: test
+  script:
+    # -prove -MDevel::Cover -l lib -r t/
+    - echo "No tests yet"
+  coverage: /Totals+.+s(d+.d+?)$/
+
+package:
+  stage: build
+  script:
+    - curl --location --output artifacts.zip "https://git.perceptyx.com/api/v4/projects/$DEPENDENCIES/jobs/artifacts/master/download?job=package&job_token=$CI_JOB_TOKEN"
+    - unzip artifacts.zip
+    - rm artifacts.zip
+    - cpanm *.tar.gz
+    - cpanm --installdeps .
+    - perl Makefile.PL
+    - make dist
+  artifacts:
+    paths:
+    - "*.tar.gz"
+    expire_in: 1 week
