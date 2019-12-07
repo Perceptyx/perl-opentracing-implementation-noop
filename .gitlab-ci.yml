@@ -23,10 +23,11 @@ package:
   stage: build
   script:
     - curl --location --output artifacts.zip 'https://git.perceptyx.com/api/v4/projects/331/jobs/artifacts/master/download?job=package'
-    - ls -l artifacts.zip
     - unzip artifacts.zip
     - rm artifacts.zip
     - cpanm *.tar.gz
+    - grep -v OpenTracing cpanfile > cpanfile.new
+    - mv cpanfile.new cpanfile
     - cpanm --installdeps .
     - perl Makefile.PL
     - make dist
