@@ -1,7 +1,7 @@
 image: ubuntu:bionic
 
 variables:
-  DEPENDENCIES: 331
+  DEPENDENCIES: "331"
 
 stages:
   - test
@@ -22,7 +22,7 @@ test:unit:
 package:
   stage: build
   script:
-    - curl --location --output artifacts.zip "https://git.perceptyx.com/api/v4/projects/$DEPENDENCIES/jobs/artifacts/master/download?job=package&job_token=$CI_JOB_TOKEN"
+    - curl --location --output artifacts.zip 'https://git.perceptyx.com/api/v4/projects/${DEPENDENCIES}/jobs/artifacts/master/download?job=package&job_token=$CI_JOB_TOKEN'
     - ls -l artifacts.zip
     - unzip artifacts.zip
     - rm artifacts.zip
