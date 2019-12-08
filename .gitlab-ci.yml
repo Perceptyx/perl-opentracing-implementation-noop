@@ -15,8 +15,7 @@ before_script:
 test:unit:
   stage: test
   script:
-    # -prove -MDevel::Cover -l lib -r t/
-    - echo "No tests yet"
+    - prove -MDevel::Cover -l lib -r t/
   coverage: /Totals+.+s(d+.d+?)$/
 
 package:
