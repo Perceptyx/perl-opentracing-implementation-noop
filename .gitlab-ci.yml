@@ -22,7 +22,8 @@ before_script:
   - cd -
   - pwd
   - ls
-  - sed '/OpenTracing::Interface/d' cpanfile
+  - mv cpanfile cpangile.bak
+  - sed '/OpenTracing::Interface/d' cpanfile.bak > cpanfile
   - echo "Installing cpanm dependencies"
   - cpanm --installdeps .
 
