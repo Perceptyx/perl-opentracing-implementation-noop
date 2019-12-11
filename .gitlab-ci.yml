@@ -19,6 +19,9 @@ before_script:
   - perl Makefile.PL
   - make install
   - cd -
+  - echo "Installing cpanm dependencies"
+  - cpanm --installdeps .
+
 
 test:unit:
   stage: test
@@ -29,7 +32,6 @@ test:unit:
 package:
   stage: build
   script:
-    - cpanm --installdeps .
     - perl Makefile.PL
     - make dist
   artifacts:
