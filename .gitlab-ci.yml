@@ -11,7 +11,7 @@ before_script:
   - echo "Before script installation"
   - apt update
   - apt install libdevel-cover-perl libtap-formatter-junit-perl libjson-xs-perl libtest-most-perl libtest-mockmodule-perl cpanminus make curl unzip -y
-  - echo "Installing DEPENDENCY: OpenTracing::Interface"
+  - echo "Installing DEPENDENCY OpenTracing::Interface"
   - curl --location --output artifacts.zip 'https://git.perceptyx.com/tvanhoesel/opentracing-perl/-/jobs/91758/artifacts/file/OpenTracing-Interface-0.02.tar.gz'
   - unzip artifacts.zip
   - cd OpenTracing-Interface-0.02
