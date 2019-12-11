@@ -16,11 +16,11 @@ before_script:
 test:unit:
   stage: test
   script:
-    - pwd
     - echo "Installing DEPENDENCY OpenTracing::Interface"
     - curl --location --output artifacts.zip 'https://git.perceptyx.com/api/v4/projects/331/jobs/artifacts/master/download?job=package'
     - unzip artifacts.zip
-    - cpanm OpenTracing-Interface-0.02.tar.gz
+    - cpanm *.tar.gz
+    - rm *.tar.gz
     - mv cpanfile cpanfile.bak
     - sed '/OpenTracing::Interface/d' cpanfile.bak > cpanfile
     - echo "Installing cpanm dependencies"
