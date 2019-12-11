@@ -27,7 +27,8 @@ test:unit:
   stage: test
   script:
     - curl --location --output artifacts.zip 'https://git.perceptyx.com/api/v4/projects/331/jobs/artifacts/master/download?job=package'
-    - unzip artifacts.zip
+      && unzip artifacts.zip
+      && rm artifacts.zip
       && cpanm *.tar.gz
       && rm *.tar.gz
     - mv cpanfile cpanfile.bak
