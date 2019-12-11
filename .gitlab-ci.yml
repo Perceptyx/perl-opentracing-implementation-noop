@@ -16,14 +16,9 @@ before_script:
 test:unit:
   stage: test
   script:
-    - echo "Installing DEPENDENCY OpenTracing::Interface"
     - curl --location --output artifacts.zip 'https://git.perceptyx.com/api/v4/projects/331/jobs/artifacts/master/download?job=package'
-    - unzip artifacts.zip
-    - cpanm *.tar.gz
-    - rm *.tar.gz
-    - mv cpanfile cpanfile.bak
-    - sed '/OpenTracing::Interface/d' cpanfile.bak > cpanfile
-    - echo "Installing cpanm dependencies"
+    - unzip artifacts.zip & cpanm *.tar.gz & rm *.tar.gz
+    - mv cpanfile cpanfile.bak & sed '/OpenTracing::Interface/d' cpanfile.bak > cpanfile
     - cpanm --installdeps .
     - prove -MDevel::Cover -l lib -r t/
   coverage: /Totals+.+s(d+.d+?)$/
