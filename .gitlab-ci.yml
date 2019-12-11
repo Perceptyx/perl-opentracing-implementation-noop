@@ -20,13 +20,7 @@ test:unit:
     - echo "Installing DEPENDENCY OpenTracing::Interface"
     - curl --location --output artifacts.zip 'https://git.perceptyx.com/api/v4/projects/331/jobs/artifacts/master/download?job=package'
     - unzip artifacts.zip
-    - tar xzvf OpenTracing-Interface-0.02.tar.gz
-    - cd OpenTracing-Interface-0.02
-    - perl Makefile.PL
-    - make install
-    - cd -
-    - pwd
-    - ls
+    - cpanm OpenTracing-Interface-0.02.tar.gz
     - mv cpanfile cpanfile.bak
     - sed '/OpenTracing::Interface/d' cpanfile.bak > cpanfile
     - echo "Installing cpanm dependencies"
