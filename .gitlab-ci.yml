@@ -33,6 +33,7 @@ test:unit:
       && rm *.tar.gz
     - mv cpanfile cpanfile.bak
       && sed '/OpenTracing::Interface/d' cpanfile.bak > cpanfile
+      && rm cpanfile.bak
     - cpanm --installdeps .
     - prove -MDevel::Cover -l lib -r t/
   coverage: /Totals+.+s(d+.d+?)$/
