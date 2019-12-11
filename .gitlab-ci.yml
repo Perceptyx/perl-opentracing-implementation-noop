@@ -17,10 +17,10 @@ test:unit:
   stage: test
   script:
     - curl --location --output artifacts.zip 'https://git.perceptyx.com/api/v4/projects/331/jobs/artifacts/master/download?job=package'
-    - unzip artifacts.zip \
-      && cpanm *.tar.gz \
+    - unzip artifacts.zip
+      && cpanm *.tar.gz
       && rm *.tar.gz
-    - mv cpanfile cpanfile.bak \
+    - mv cpanfile cpanfile.bak
       && sed '/OpenTracing::Interface/d' cpanfile.bak > cpanfile
     - cpanm --installdeps .
     - prove -MDevel::Cover -l lib -r t/
@@ -29,7 +29,7 @@ test:unit:
 package:
   stage: build
   script:
-    - perl Makefile.PL \
+    - perl Makefile.PL
       && make dist
   artifacts:
     paths:
