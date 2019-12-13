@@ -48,7 +48,7 @@ sub extract { undef }
 
 BEGIN {
     use Role::Tiny::With;
-    with 'OpenTracing::Interface::Span'
+    with 'OpenTracing::Interface::Tracer'
         if $ENV{OPENTRACING_INTERFACE};
 } # check at compile time, perl -c will work
 
