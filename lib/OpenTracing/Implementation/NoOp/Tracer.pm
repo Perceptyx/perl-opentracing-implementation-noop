@@ -43,7 +43,7 @@ sub start_span {
 
 sub inject_context { }
 
-sub extract { undef }
+sub extract_context { undef }
 
 
 
