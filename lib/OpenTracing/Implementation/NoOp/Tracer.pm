@@ -32,6 +32,7 @@ sub get_scope_manager {
 sub get_active_span {
     OpenTracing::Implementation::NoOp::Span->new( )
 }
+
 sub start_active_span {
     OpenTracing::Implementation::NoOp::Scope->new( )
 }
@@ -40,9 +41,9 @@ sub start_span {
     OpenTracing::Implementation::NoOp::Span->new( )
 }
 
-sub inject { }
+sub inject_context { }
 
-sub extract { undef }
+sub extract_context { undef }
 
 
 
