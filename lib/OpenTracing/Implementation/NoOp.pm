@@ -21,4 +21,12 @@ sub bootstrap {
 
 
 
+BEGIN {
+    use Role::Tiny::With;
+    with 'OpenTracing::Implementation::Interface::Bootstrap'
+        if $ENV{OPENTRACING_INTERFACE}
+} # check at compile time, perl -c will work
+
+
+
 1;
