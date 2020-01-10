@@ -1,6 +1,15 @@
 CHANGE LOG
 ==========
 
+
+2019-12-13 01:46:32 - v0.03
+---------------------------
+
+### Fixed
+
+    - add test to run with $OPENTRACING_INTERFACE = 1
+    - add missing methods required for being OpenTracing-Interface compliant
+
 2019-12-13 01:15:26 - v0.02
 ---------------------------
 
