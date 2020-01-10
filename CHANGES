@@ -2,6 +2,14 @@ CHANGE LOG
 ==========
 
 
+2020-01-10 - v0.05
+------------------
+
+### Added
+
+    - with OpenTracing Implementation Interface Bootstrap
+
+
 2020-01-10 - v0.04
 ------------------
 
