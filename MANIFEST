@@ -1,3 +1,4 @@
+CHANGES
 cpanfile
 lib/OpenTracing/Implementation/NoOp.pm
 lib/OpenTracing/Implementation/NoOp.pod
