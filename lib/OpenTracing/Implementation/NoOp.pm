@@ -3,7 +3,7 @@ package OpenTracing::Implementation::NoOp;
 use strict;
 use warnings;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 
 
@@ -18,6 +18,14 @@ sub bootstrap {
     
     return Tracer->new( @implementation_args );
 }
+
+
+
+BEGIN {
+    use Role::Tiny::With;
+    with 'OpenTracing::Implementation::Interface::Bootstrap'
+        if $ENV{OPENTRACING_INTERFACE}
+} # check at compile time, perl -c will work
 
 
 
