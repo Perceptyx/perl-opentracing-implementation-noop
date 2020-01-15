@@ -11,7 +11,7 @@ use aliased 'OpenTracing::Implementation::NoOp::Tracer';
 
 
 
-sub bootstrap {
+sub bootstrap_tracer {
     my $implementation_class = shift;
     
     my @implementation_args  = @_;
