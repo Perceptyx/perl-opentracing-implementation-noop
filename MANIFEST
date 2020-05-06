@@ -2,6 +2,7 @@ CHANGES
 cpanfile
 lib/OpenTracing/Implementation/NoOp.pm
 lib/OpenTracing/Implementation/NoOp.pod
+lib/OpenTracing/Implementation/NoOp/ContextReference.pm
 lib/OpenTracing/Implementation/NoOp/Scope.pm
 lib/OpenTracing/Implementation/NoOp/ScopeManager.pm
 lib/OpenTracing/Implementation/NoOp/Span.pm
