@@ -4,4 +4,5 @@ requires                "aliased";
 
 on 'test' => sub {
     requires            "Test::Most";
+    requires            "Test::OpenTracing::Interface";
 };
