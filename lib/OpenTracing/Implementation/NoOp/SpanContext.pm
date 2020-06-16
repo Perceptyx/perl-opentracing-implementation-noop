@@ -15,6 +15,8 @@ None of the methods will do anything useful.
 
 =cut
 
+our $VERSION = 'v0.70.0';
+
 
 
 sub get_baggage_item { undef }

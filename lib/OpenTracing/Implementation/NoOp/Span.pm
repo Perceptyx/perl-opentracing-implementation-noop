@@ -15,6 +15,8 @@ None of the methods will do anything useful.
 
 =cut
 
+our $VERSION = 'v0.70.0';
+
 
 
 use OpenTracing::Implementation::NoOp::SpanContext;
