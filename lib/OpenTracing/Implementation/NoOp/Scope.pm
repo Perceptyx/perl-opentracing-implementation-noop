@@ -27,7 +27,7 @@ sub new { bless {} }
 
 
 
-sub close { }
+sub close { shift }
 
 sub get_span {
     OpenTracing::Implementation::NoOp::Span->new( )
