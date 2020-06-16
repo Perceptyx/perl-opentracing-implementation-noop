@@ -17,12 +17,12 @@ None of the methods will do anything useful.
 
 
 
-sub get_baggage_item { undef }
-
 sub with_baggage_item { __PACKAGE__->new( ) }
 
 sub with_baggage_items { __PACKAGE__->new( ) }
 
+sub get_baggage_item  { return }
+sub get_baggage_items { return }
 
 
 sub new { bless {} }
