@@ -35,14 +35,18 @@ sub overwrite_operation_name { shift }
 
 sub finish { shift }
 
-sub set_tag { shift }
+sub add_tag  { shift }
+sub add_tags { shift }
+
+sub get_tags { return }
 
 sub log_data { shift }
 
-sub set_baggage_item { shift }
+sub add_baggage_item  { shift }
+sub add_baggage_items { shift }
 
-sub get_baggage_item { undef }
-
+sub get_baggage_item  { return }
+sub get_baggage_items { return }
 
 
 BEGIN {
