@@ -31,9 +31,7 @@ sub activate_span {
     OpenTracing::Implementation::NoOp::Scope->new( )
 }
 
-sub get_active_scope {
-    OpenTracing::Implementation::NoOp::Scope->new( )
-}
+sub get_active_scope { return }
 
 
 
