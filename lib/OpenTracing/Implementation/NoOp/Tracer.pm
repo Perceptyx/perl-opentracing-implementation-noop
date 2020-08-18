@@ -43,7 +43,7 @@ sub start_span {
     OpenTracing::Implementation::NoOp::Span->new( )
 }
 
-sub inject_context { }
+sub inject_context { $_[1] } # carrier
 
 sub extract_context { undef }
 
